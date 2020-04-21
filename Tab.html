@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .tab-btn-group {
+            width: 600px;
+            height: 100px;
+            /* background-color: rgb(95, 109, 121); */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .tab-btn {
+            width: 150px;
+            height: 100%;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            text-align:center;
+            line-height: 100px;
+            font-size: 50px;
+            font-family: 微軟正黑體;
+        }
+
+        .tab-content-group {
+            width: 1000px;
+            position: relative;
+        }
+
+        .tab-content {
+            width: 600px;
+            height: 500px;
+            background-color: rgb(182, 182, 182);
+            font-family: 微軟正黑體;
+            font-weight: bold;
+            text-align:center;
+            line-height: 450px;
+            font-size: 30px;
+            
+            /* position: absolute; */
+        }
+
+        .display-none {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="tab-btn-group">
+        <div id="tab-btn-1" class="tab-btn">我</div>
+        <div id="tab-btn-2" class="tab-btn">好</div>
+        <div id="tab-btn-3" class="tab-btn">難</div>
+    </div>
+
+    <div class="tab-content-group">
+        <div id="tab-content-1" class="tab-content">Tab-1 我好難</div>
+        <div id="tab-content-2" class="tab-content display-none">Tab-2 我真的好難</div>
+        <div id="tab-content-3" class="tab-content display-none">Tab-3 我非常無敵的難</div>
+    </div>
+
+
+    <script>
+        var tab_btn_group = document.querySelector('.tab-btn-group')
+        var tab_btn_1 = document.querySelector('#tab-btn-1')
+        var tab_btn_2 = document.querySelector('#tab-btn-2')
+        var tab_btn_3 = document.querySelector('#tab-btn-3')
+
+        var tab_content_group = document.querySelector(".tab-content-group")
+
+        var tab_content_1 = document.querySelector('#tab-content-1')
+        var tab_content_2 = document.querySelector('#tab-content-2')
+        var tab_content_3 = document.querySelector('#tab-content-3')
+
+        tab_btn_1.onclick = function choose1 (){
+            tab_content_1.classList.remove('display-none')
+            tab_content_3.classList.add('display-none')
+            tab_content_2.classList.add('display-none')
+        }
+
+        tab_btn_2.onclick = function choose2 (){
+            tab_content_2.classList.remove('display-none')
+            tab_content_1.classList.add('display-none')
+            tab_content_3.classList.add('display-none')
+        }
+
+        tab_btn_3.onclick = function choose3 (){
+            tab_content_3.classList.remove('display-none')
+            tab_content_2.classList.add('display-none')
+            tab_content_1.classList.add('display-none')
+        }
+    </script>
+</body>
+
+</html>
